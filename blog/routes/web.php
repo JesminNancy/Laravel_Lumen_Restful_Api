@@ -1,18 +1,4 @@
 <?php
-
-/** @var \Laravel\Lumen\Routing\Router $router */
-
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It is a breeze. Simply tell Lumen the URIs it should respond to
-| and give it the Closure to call when that URI is requested.
-|
-*/
-
 $router->get('/get', function () use ($router) {
     return "I am get";
 });
@@ -45,3 +31,10 @@ $router->post('/{name}/{age}[/{city}]', function($name,$age,$city=null){
 });
 
 $router->get('/{name}', 'MyController@My');
+// Json Response Body
+$router->get('/response', 'MyController@Response');
+
+//  Response Redirect And Download 
+$router->get('/first', 'MyController@First');
+$router->get('/second', 'MyController@Second');
+$router->get('/download', 'MyController@Download');
