@@ -33,3 +33,13 @@ $router->post('/jesmin', function(){
 
     return "I am Jesmin Akther Nancy";
 });
+
+// Required Parameter
+// $router->post('/{name}/{age}/{city}', function($name,$age,$city){
+//     return $name.$age.$city;
+// });
+
+// Optional Parameter
+$router->post('/{name}/{age}[/{city}]', function($name,$age,$city=null){
+    return $name.$age.$city;
+});
