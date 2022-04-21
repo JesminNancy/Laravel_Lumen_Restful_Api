@@ -43,3 +43,5 @@ $router->post('/jesmin', function(){
 $router->post('/{name}/{age}[/{city}]', function($name,$age,$city=null){
     return $name.$age.$city;
 });
+
+$router->get('/{name}', 'MyController@My');
