@@ -27,11 +27,29 @@ class DetailsController extends Controller{
           }
       }
       
-      function detailsUpdate(){
-      
+      function detailsUpdate(Request $request){
+        $id= $request->input("id");
+        $name= $request->input("name");
+        $city= $request->input("city");
+        $sql= "UPDATE `details` SET `name`=?, `city`=? WHERE `id`=?";
+        $result= DB::update($sql, [$name, $city, $id]);
+        
+        if($result==true){
+          return "Data Updated";
+        }else{
+          return "Updated Failed!Try Again";
+        }
       }
       
-      function detailsDelete(){
-      
+      function detailsDelete(Request $request){
+        $id= $request->input("id");
+        $sql= "DELETE FROM `details` WHERE `id`=? ";
+        $result= DB::delete($sql, [$id]);
+        
+        if($result==true){
+          return "Data Deleted";
+        }else{
+          return "Deleted Failed!Try Again";
+        }
       }
 }
