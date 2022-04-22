@@ -41,3 +41,11 @@ $router->get('/download', 'MyController@Download');
 
 // Sending And Catching(Request Class)
 $router->post('/catch', 'MyController@Catch');
+// Check Database Connection
+$router->get('/database', 'MyController@testConn');
+
+// Basic CRUD Operation
+$router->get('/details', 'DetailsController@detailsSelect');
+$router->post('/details', 'DetailsController@detailsCreate');
+$router->put('/details', 'DetailsController@detailsUpdate');
+$router->delete('/details', 'DetailsController@detailsDelete');

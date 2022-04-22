@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
+use illuminate\support\Facades\DB;
 
 
 class MyController extends Controller{
@@ -38,5 +39,10 @@ class MyController extends Controller{
     
     function Catch(Request $request){
         return $request->header("name");
+    }
+    
+    function testConn(){
+      $dbname = DB::Connection()->select("SELECT * FROM details");
+      return $dbname;
     }
 }
