@@ -38,3 +38,6 @@ $router->get('/response', 'MyController@Response');
 $router->get('/first', 'MyController@First');
 $router->get('/second', 'MyController@Second');
 $router->get('/download', 'MyController@Download');
+
+// Sending And Catching(Request Class)
+$router->post('/catch', 'MyController@Catch');

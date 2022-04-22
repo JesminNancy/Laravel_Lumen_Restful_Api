@@ -2,6 +2,8 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Http\Request;
+
 
 class MyController extends Controller{
 
@@ -32,5 +34,9 @@ class MyController extends Controller{
     function Download(){ 
       $path= 'demo.txt';
       return response()->download($path);
+    }
+    
+    function Catch(Request $request){
+        return $request->header("name");
     }
 }
