@@ -49,5 +49,30 @@ class BuilderController extends Controller{
             return "Data Not Inserted";
         }
       }
+      
+      function Update(Request $request){
+        $name= $request->input('name');
+        $id= $request->input('id');
+        $result= DB::table('details')->where('id', $id)->update(['name'=>$name]);
+        
+        if($result==true){
+            return "Data Updated Successfully";
+        }else{
+            return "Data Not Updated";
+        }
+      
+      }
+      
+      function Delete(Request $request){
+        $id= $request->input('id');
+        $result= DB::table('details')->where('id', $id)->delete();
+        
+        if($result==true){
+            return "Data Deleted Successfully";
+        }else{
+            return "Data Not Deleted";
+        }
+      
+      }
 
 } 
