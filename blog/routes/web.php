@@ -49,3 +49,8 @@ $router->get('/details', 'DetailsController@detailsSelect');
 $router->post('/details', 'DetailsController@detailsCreate');
 $router->put('/details', 'DetailsController@detailsUpdate');
 $router->delete('/details', 'DetailsController@detailsDelete');
+
+// Query Builder
+$router->get('/builder', 'BuilderController@detailsSelect');
+$router->get('/singlerow', 'BuilderController@SingleRows');
+$router->get('/aggregates', 'BuilderController@Aggregates');
