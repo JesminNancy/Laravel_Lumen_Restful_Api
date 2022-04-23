@@ -54,3 +54,6 @@ $router->delete('/details', 'DetailsController@detailsDelete');
 $router->get('/builder', 'BuilderController@detailsSelect');
 $router->get('/singlerow', 'BuilderController@SingleRows');
 $router->get('/aggregates', 'BuilderController@Aggregates');
+$router->post('/builder', 'BuilderController@Insert');
+$router->put('/builder', 'BuilderController@Update');
+$router->delete('/builder', 'BuilderController@Delete');
