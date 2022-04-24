@@ -52,4 +52,30 @@ class DemoController extends Controller
         }
     }
     
+    function Update(Request $request){
+        $id= $request->input('id');
+        $name= $request->input('name');
+        $roll= $request->input('roll');
+        
+        $result= DetailsModel::where('id', $id)->update(['name'=>$name, 'roll'=>$roll]);
+        
+        if($result==true){
+            return "Data Updated Successfully";
+        }else{
+            return "Data Not Updated";
+        }
+    }
+        
+    function Delete(Request $request){
+    
+        $id= $request->input('id');   
+        $result= DetailsModel::where('id', $id)->delete();
+        
+        if($result==true){
+            return "Data Deleted";
+        }else{
+            return "Data Not Deleted";
+        }
+    }
+    
 }
