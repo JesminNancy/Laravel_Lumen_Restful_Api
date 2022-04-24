@@ -57,3 +57,7 @@ $router->get('/aggregates', 'BuilderController@Aggregates');
 $router->post('/builder', 'BuilderController@Insert');
 $router->put('/builder', 'BuilderController@Update');
 $router->delete('/builder', 'BuilderController@Delete');
+
+// Use Models
+$router->get('/select', 'DemoController@SelectAll');
+$router->post('/select', 'DemoController@SelectById');
