@@ -37,4 +37,19 @@ class DemoController extends Controller
         return $result;   
     }
     
+    function Insert(Request $request){
+        $name= $request->input('name');
+        $roll= $request->input('roll');
+        $city= $request->input('city');
+        $phone= $request->input('phone');
+        $class= $request->input('class');
+        $result= DetailsModel::insert(['name'=>$name, 'roll'=>$roll, 'city'=>$city, 'phone'=>$phone, 'class'=>$class]);
+        
+        if($result==true){
+            return "Data Inserted Successfully";
+        }else{
+            return "Data Not Inserted";
+        }
+    }
+    
 }

@@ -66,3 +66,4 @@ $router->get('/min', 'DemoController@Min');
 $router->get('/max', 'DemoController@Max');
 $router->get('/avg', 'DemoController@Avg');
 $router->get('/sum', 'DemoController@Sum');
+$router->post('/insert', 'DemoController@Insert');
