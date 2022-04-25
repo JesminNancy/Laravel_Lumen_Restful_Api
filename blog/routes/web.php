@@ -60,6 +60,9 @@ $router->delete('/builder', 'BuilderController@Delete');
 
 // Use Models
 $router->get('/select', 'DemoController@SelectAll');
+
+$router->get('/select', ['middleware'=>'auth','uses'=>'DemoController@SelectAll']);
+
 $router->post('/select', 'DemoController@SelectById');
 $router->get('/count', 'DemoController@Count');
 $router->get('/min', 'DemoController@Min');
